@@ -1,4 +1,2 @@
-# C-PBL
-Mini git version control
-the vedant nautiyal
-hii
+# PBL
+CleanLink-A community funded waste management and micro-job platform.
