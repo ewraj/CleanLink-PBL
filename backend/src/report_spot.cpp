@@ -1,5 +1,19 @@
 #include "report_spot.h"
 #include <cstring>
+
+
+
+
+
+
+
+
+
+
+
+// input from user and storing into .dat file 
+
+
 void ReportSpot::reportSpot(
     int reporterID,
     double latitude,
