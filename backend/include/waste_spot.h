@@ -1,6 +1,8 @@
 #ifndef WASTE_SPOT_H
 #define WASTE_SPOT_H
 
+#include "applicant.h"
+
 // Waste size
 typedef enum {
     SMALL,
@@ -17,9 +19,12 @@ typedef enum {
     COMPLETED
 } SpotStatus;
 
-typedef struct WasteSpot {
+#define MAX_ASSIGNED_WORKERS 20
+
+typedef struct WasteSpot
+{
     int spotID;
-    int reporterID;          // User who reported the spot
+    int reporterID;
 
     double latitude;
     double longitude;
@@ -32,7 +37,16 @@ typedef struct WasteSpot {
 
     SpotStatus status;
 
-    struct WasteSpot *next;  // Linked list pointer
+    // Linked list of applicants
+    Applicant *applicantHead;
+
+    // Workers selected by priority queue
+    int assignedWorkers[MAX_ASSIGNED_WORKERS];
+    int assignedCount;
+
+    // Linked list of waste spots
+    struct WasteSpot *next;
+
 } WasteSpot;
 
 #endif
